@@ -3,6 +3,8 @@
 shopt -s extglob
 SHELL_FOLDER=$(dirname $(readlink -f "$0"))
 
+rm -rf package/devel/kselftests-bpf
+
 rm -rf package/boot/uboot-rockchip
 svn export --force https://github.com/coolsnowwolf/lede/trunk/package/boot/uboot-rockchip package/boot/uboot-rockchip
 svn export --force https://github.com/coolsnowwolf/lede/trunk/package/boot/arm-trusted-firmware-rockchip-vendor package/boot/arm-trusted-firmware-rockchip-vendor

@@ -37,6 +37,8 @@ mv -f feeds/kiddin9/r81* tmp/
 sed -i "s/192.168.1/10.0.0/" package/feeds/kiddin9/base-files/files/bin/config_generate
 sed -i "s/192.168.1/10.0.0/" package/base-files/files/bin/config_generate
 
+sed -i "/call Build\/check-size,\$\$(KERNEL_SIZE)/d" include/image.mk
+
 svn checkout https://github.com/coolsnowwolf/lede/trunk/target/linux/generic/hack-5.15 target/linux/generic/hack-5.15
 curl -sfL https://raw.githubusercontent.com/coolsnowwolf/lede/master/target/linux/generic/pending-5.15/613-netfilter_optional_tcp_window_check.patch -o target/linux/generic/pending-5.15/613-netfilter_optional_tcp_window_check.patch
 sed -i "s/CONFIG_WERROR=y/CONFIG_WERROR=n/" target/linux/generic/config-5.15

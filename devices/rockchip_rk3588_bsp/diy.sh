@@ -9,7 +9,7 @@ sed -i -e 's,kmod-r8168,kmod-r8169,g' target/linux/rockchip/image/armv8.mk
 
 sed -i 's/DEFAULT_PACKAGES +=/DEFAULT_PACKAGES += fdisk lsblk kmod-drm-rockchip/' target/linux/rockchip/Makefile
 
-rm -rf package/network/utils/xdp-tools
+rm -rf package/network/utils/xdp-tools package/devel/kselftests-bpf
 
 echo '
 CONFIG_SENSORS_PWM_FAN=y
